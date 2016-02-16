@@ -81,6 +81,7 @@ class Connect4Game:
         player = self.current_turn()
         assert(self.valid_cols()[column] == 1)
         row = self.lowest_open_in_column(column)
+        assert (row != -1)
         self.board[row, column] = player
         if player == 0:
             self.first_player_moves.append(column)
