@@ -20,4 +20,5 @@ class GameRunner:
                 move = self.player2.choose_move(game_copy)
             self.game.make_move(move)
             winner = self.game.winner()
+            # TODO: if there is no valid move return draw.
         return self.game
