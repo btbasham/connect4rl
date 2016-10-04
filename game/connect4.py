@@ -131,6 +131,7 @@ class Connect4Game:
         return lines_to_check
 
     def winner(self):
+        # 0 for player 0, 1 for player 1, 2 for a draw.
         # TODO: Do this with numpy magic
         for line in self.lines_to_check:
             player = self.board[line[0]]
@@ -142,6 +143,8 @@ class Connect4Game:
                     winning_line = False
             if winning_line:
                 return player
+        if len(self.valid_moves()) == 0:
+            return 2
         return -1
 
     def make_copy(self):
